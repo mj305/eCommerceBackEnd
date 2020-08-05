@@ -1,0 +1,22 @@
+{
+  "name": "backend-ecommerce",
+  "version": "1.0.0",
+  "description": "eCommerce",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mj305/eCommerceBackEnd.git"
+  },
+  "author": "Maria Beckles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mj305/eCommerceBackEnd/issues"
+  },
+  "homepage": "https://github.com/mj305/eCommerceBackEnd#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
