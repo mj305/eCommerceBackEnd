@@ -15,7 +15,7 @@ db.once('open', function() {
 
 
 app.get('/', (req, res) => {
-  res.send('Something else!')
+  return res.status(201).json({'name': 'Hello World'})
 })
 
 app.listen(port, () => {
