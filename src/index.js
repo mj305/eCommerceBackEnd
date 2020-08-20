@@ -1,10 +1,13 @@
 import "dotenv/config";
+import cors from "cors";
 import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
+import signUp from "./actions/signUp";
 
 const app = express();
 const port = process.env.PORT;
+app.use(cors());
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -24,10 +27,7 @@ app.get("/", (req, res) => {
   return res.status(201).json({ name: "Hello World" });
 });
 
-app.post("/signup", (req, res) => {
-  const { email, userUID } = req.body;
-  return res.status(201).json({ message: "Success" });
-});
+app.post("/signup", signUp);
 
 app.listen(port, () => {
   console.log(`We are live at http://localhost:${port}`);
