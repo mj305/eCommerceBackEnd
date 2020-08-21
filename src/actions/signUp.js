@@ -1,7 +1,9 @@
 import userSchema from "../models/user.model";
+
 const signUp = async (req, res) => {
   try {
     const { email, firebaseID } = req.body;
+    console.log(req.body);
     const newUser = new userSchema({
       email,
       firebaseID,
