@@ -13,14 +13,3 @@ const userSchema = new Schema({
 });
 
 export default model("user", userSchema);
-
-/* 
-Name
-email
-Address
-cc info / payment saved
-
-orders History
-cancelled orders History
-returns History
-*/

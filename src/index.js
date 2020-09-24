@@ -4,6 +4,10 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import signUp from "./actions/signUp";
+import addProduct from "./actions/addProduct";
+import viewProduct from "./actions/viewProduct";
+import vewSingleProduct from "./actions/vewSingleProduct";
+import checkout from "./actions/checkout";
 
 const app = express();
 const port = process.env.PORT;
@@ -28,6 +32,10 @@ app.get("/", (req, res) => {
 });
 
 app.post("/signup", signUp);
+app.post("/addProduct", addProduct);
+app.get("/viewProduct", viewProduct);
+app.get("/viewProduct/:id", vewSingleProduct);
+app.post("/checkout", checkout);
 
 app.listen(port, () => {
   console.log(`We are live at http://localhost:${port}`);

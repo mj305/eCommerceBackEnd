@@ -24,7 +24,8 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.28",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "stripe": "^8.98.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
