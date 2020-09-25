@@ -2,6 +2,8 @@ const stripe = require("stripe")("sk_test_eRxFLgrcbFYP939Zq9sUXlIG");
 
 const checkout = async (req, res) => {
   try {
+    console.log(req.body);
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       line_items: [
@@ -11,7 +13,7 @@ const checkout = async (req, res) => {
             product_data: {
               name: "T-shirt",
             },
-            unit_amount: 2000,
+            unit_amount: 3000,
           },
           quantity: 1,
         },
