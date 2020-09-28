@@ -1,8 +1,12 @@
+import orderSchema from "../models/orders.model";
+
 const stripe = require("stripe")("sk_test_eRxFLgrcbFYP939Zq9sUXlIG");
 
 const checkout = async (req, res) => {
   try {
-    console.log(req.body);
+    const { items, subTotal } = req.body;
+
+    console.log(items);
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
@@ -11,9 +15,9 @@ const checkout = async (req, res) => {
           price_data: {
             currency: "usd",
             product_data: {
-              name: "T-shirt",
+              name: "Total",
             },
-            unit_amount: 3000,
+            unit_amount: subTotal * 100,
           },
           quantity: 1,
         },
@@ -22,6 +26,11 @@ const checkout = async (req, res) => {
       success_url: "https://example.com/success",
       cancel_url: "https://example.com/cancel",
     });
+
+    const newOrder = new orderSchema({
+      order: items,
+    });
+    await newOrder.save();
 
     res.json({ id: session.id });
   } catch (error) {
