@@ -31,7 +31,7 @@ const checkout = async (req, res) => {
       order: items,
     });
     await newOrder.save();
-
+    console.log(session);
     res.json({ id: session.id });
   } catch (error) {
     console.log(error);
