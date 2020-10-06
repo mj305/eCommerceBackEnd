@@ -8,6 +8,7 @@ import addProduct from "./actions/addProduct";
 import viewProduct from "./actions/viewProduct";
 import vewSingleProduct from "./actions/vewSingleProduct";
 import checkout from "./actions/checkout";
+import addtocart from "./actions/addtocart";
 
 const app = express();
 const port = process.env.PORT;
@@ -36,6 +37,7 @@ app.post("/addProduct", addProduct);
 app.get("/viewProduct", viewProduct);
 app.get("/viewProduct/:id", vewSingleProduct);
 app.post("/checkout", checkout);
+app.post("/addtocart", addtocart);
 
 app.listen(port, () => {
   console.log(`We are live at http://localhost:${port}`);
