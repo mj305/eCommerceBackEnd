@@ -23,8 +23,8 @@ const checkout = async (req, res) => {
         },
       ],
       mode: "payment",
-      success_url: "https://example.com/success",
-      cancel_url: "https://example.com/cancel",
+      success_url: `${process.env.FRONTEND_URL}/success`,
+      cancel_url: `${process.env.FRONTEND_URL}/cancel`,
     });
 
     const newOrder = new orderSchema({
