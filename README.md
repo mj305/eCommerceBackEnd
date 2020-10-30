@@ -1,6 +1,6 @@
 # eCommerceBackEnd
 
-[eCommerce Store Prototipe] (https://github.com/mj305/eCommerce)
+[eCommerce Frontend](https://github.com/mj305/eCommerce)
 
 
 ## Technologies used
